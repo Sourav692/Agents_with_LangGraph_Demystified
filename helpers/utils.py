@@ -29,6 +29,7 @@ from langchain_groq import ChatGroq
 # ChatOpenAI: LangChain wrapper for OpenAI's Chat API (GPT-3.5, GPT-4, etc.)
 # from langchain.chat_models import ChatOpenAI
 from langchain_openai import ChatOpenAI
+from databricks_langchain import ChatDatabricks
 from langchain_groq import ChatGroq
 
 # python-dotenv: Loads environment variables from a .env file
@@ -141,8 +142,21 @@ def get_groq_llm(model_name: str = "llama-3.3-70b-versatile", temperature: float
     -----
     Requires GROQ_API_KEY environment variable to be set.
     Get your free API key at: https://console.groq.com/
+
+    ## Use openai/gpt-oss-120b if you want to use OpenAI's models
+    ## Use moonshotai/kimi-k2-instruct-0905 if you want to use Moonshot's models
     """
     return ChatGroq(
         model=model_name,
+        temperature=temperature
+    )
+
+
+def get_databricks_llm(model_name: str = "databricks-gpt-5-2", temperature: float = 0.1):
+    """
+    Create and return a Databricks Chat LLM instance.
+    """
+    return ChatDatabricks(
+        endpoint=model_name,
         temperature=temperature
     )
