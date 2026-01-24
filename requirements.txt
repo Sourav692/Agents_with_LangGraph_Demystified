@@ -4,6 +4,7 @@ langchain-community
 langchain-core
 langchain_groq
 langchain-huggingface
+langchain_chroma
 
 # LangGraph packages
 langgraph
@@ -16,4 +17,7 @@ tavily-python
 typing_extensions
 transformers
 databricks-langchain
-pywin32  # Required for Windows compatibility
+# pywin32  # Required for Windows compatibility
+tqdm
+langchain-core
+wikipedia==1.4.0
