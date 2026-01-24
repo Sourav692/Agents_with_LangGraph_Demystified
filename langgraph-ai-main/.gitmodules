@@ -1,3 +1,0 @@
-[submodule "mcp/02-build-mcp-client-with-multiple-server-support/servers_ref"]
-	path = mcp/02-build-mcp-client-with-multiple-server-support/servers_ref
-	url = https://github.com/modelcontextprotocol/servers.git
